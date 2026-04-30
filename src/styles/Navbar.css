@@ -1,0 +1,159 @@
+/* =========================
+   NAVBAR BASE
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 1rem 1.5rem;
+  
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+  
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  /* =========================
+     BRAND
+  ========================= */
+  
+  .brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  
+  /* =========================
+     DESKTOP NAV
+  ========================= */
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.2s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #000;
+  }
+  
+  /* CTA LINK */
+  .cta-link {
+    background: #7161EF;
+    color: white !important;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+  }
+  
+  .cta-link:hover {
+    background: var(--color-med-green);
+    transform: translateY(-1px);
+  }
+  
+  /* =========================
+     BURGER MENU
+  ========================= */
+  
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .burger-bar {
+    width: 25px;
+    height: 2px;
+    background: #111;
+    transition: 0.3s ease;
+  }
+  
+  /* animation when open */
+  .burger-menu.open .burger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .burger-menu.open .burger-bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger-menu.open .burger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  /* =========================
+     MOBILE NAV
+  ========================= */
+  
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  
+    width: 100%;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  
+    padding: 1.5rem;
+  
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+  
+    transition: all 0.25s ease;
+  }
+  
+  .mobile-nav.visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .mobile-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  /* CTA in mobile */
+  .mobile-nav .cta-link {
+    text-align: center;
+  }
+  
+  /* =========================
+     RESPONSIVE
+  ========================= */
+  
+  @media (max-width: 768px) {
+  
+    .nav-links.desktop-nav {
+      display: none;
+    }
+  
+    .burger-menu {
+      display: flex;
+    }
+  }

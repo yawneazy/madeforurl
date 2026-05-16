@@ -10,7 +10,7 @@ function App() {
     {
       title: "Custom-Tailored Design",
       description:
-        "Your website is built around your business, brand, and audience — not locked into a generic template.",
+        "Your website is built around your business, brand, and audience — not a one-size-fits-all template.",
     },
     {
       title: "Faster, Modern Technology",
@@ -35,12 +35,18 @@ function App() {
   ];
 
   const comparisonRows = [
-    ["Custom Design", "✅", "Limited by templates"],
-    ["Scalable Features", "✅", "Often restricted"],
-    ["Direct Support", "✅", "Platform support only"],
-    ["Advanced Customization", "✅", "Limited"],
-    ["Unique Branding", "✅", "Harder to stand out"],
-    ["Full Ownership & Flexibility", "✅", "Platform-dependent"],
+    ["Built around your brand", "✓", "Limited by templates"],
+  ["Easy to grow later", "✓", "Often restrictive"],
+  ["You talk directly to me", "✓", "Platform support only"],
+  ["Full customization", "✓", "Limited"],
+  ["Actually unique design", "✓", "Harder to stand out"],
+  ["You fully own it", "✓", "Platform-dependent"],
+    // ["Custom Design", "✅", "Limited by templates"],
+    // ["Scalable Features", "✅", "Limited by platform rules"],
+    // ["Direct Support", "✅", "Platform support only"],
+    // ["Advanced Customization", "✅", "Limited"],
+    // ["Unique Branding", "✅", "Harder to stand out"],
+    // ["Full Ownership & Flexibility", "✅", "Platform-dependent"],
   ];
 
   const plans = [
@@ -100,7 +106,8 @@ function App() {
       <section className="hero" id="home">
         <div className="hero-content">
           <h1 className="hero-title">
-            Made for your <span className="accent">URL</span>
+          I build websites made for your <span className="accent">URL</span>
+            {/* Made for your <span className="accent">URL</span> */}
             {/* , because it deserves to stand out. */}
             {/* Made for your URL, made to grow your business. */}
 
@@ -108,7 +115,8 @@ function App() {
           </h1>
 
           <p className="hero-subtext">
-          Because it deserves to stand out.
+          Custom-built, clean, and designed to actually fit your business — not a template you’ve seen a hundred times.
+          {/* Because it deserves to stand out. */}
             {/* Because your URL is your business. */}
             {/* Because it deserves something better. */}
           {/* I design and build custom websites that actually fit your brand. */}
@@ -139,14 +147,14 @@ function App() {
 
           <div className="how-actions">
             <div className="how-card">
-           <h3>1. Let's Meet!</h3>
-           <p>Let's get to know each other with a quick call. This will help me understand your goals, brand and vision. 
-           We’ll review your current website (if you have one), domain setup, and talk through design preferences like style, colors, and functionality. </p>
+           <h3>1. Let's Talk</h3>
+           <p>We’ll start with a quick call so I can understand your business, your goals, and the kind of site you actually need.
+We’ll also go over any ideas you already have for design, style, or functionality.</p>
            </div>
            <div className="how-card">
            <h3>2. Design Mockup</h3>
-           <p>   I create a custom design in Figma based on your input. 
-      You’ll be able to see the layout, structure, and overall direction before anything is built.
+           <p> I'll design your site in Figma so you can see exactly how everything will look
+            before any development starts.
  </p>
 </div>
 <div className="how-card">
@@ -158,23 +166,19 @@ function App() {
 </div>
 <div className="how-card">
     <h3>4. Build & Development</h3>
- <p>
- I turn the approved design into a fully functional website. 
-      This includes mobile optimization, forms, and all necessary integrations.
+ <p> I take the approved design and turn it into a real, responsive website — optimized for mobile, speed, and usability. 
 </p>
 </div>
 <div className="how-card">
     <h3>5. Launch</h3>
     <p>
-      After final review, your site goes live. 
+      After final review, your site goes live! 
       I handle the setup so everything runs smoothly on your domain.
     </p>
   </div>
   <div className="how-card">
     <h3>6. Ongoing Support</h3>
-    <p>
-      Need updates or changes? I’ve got you covered. 
-      Depending on your plan, I’ll continue to help maintain and improve your site.
+    <p> If you need updates or changes, I’m available depending on your plan. You’re not left on your own after launch.
     </p>
   </div>
           </div>
@@ -190,11 +194,9 @@ function App() {
       </h2>
 
       <p className="why-subtext">
-        Platforms like Wix and Squarespace make it easy to launch a
-        website quickly — but businesses often outgrow them.
-        MadeforURL is designed for businesses that want flexibility,
-        stronger branding, and a website built around their goals
-        instead of a one-size-fits-all template.
+      Most website builders are great for getting started, but they can feel limiting once your business starts to grow or you want something more specific.
+
+I build custom websites that give you more control over design, performance, and how your site actually works — without forcing you into a template.
       </p>
     </div>
 
@@ -214,10 +216,15 @@ function App() {
     </div>
 
     <div className="comparison-wrapper">
+    <p className="comparison-intro">
+  Here’s how I approach websites compared to template builders.
+  It’s not that tools like Wix are bad — they just aren’t built for flexibility once you start growing.
+</p>
       <div className="comparison-header">
-        <h3>
+        {/* <h3>
           MadeforURL vs Template Builders
-        </h3>
+        </h3> */}
+        <h3>Why I don’t use template builders for client sites</h3>
       </div>
 
       <div className="comparison-scroll">
@@ -287,7 +294,7 @@ function App() {
             <section className="pricing" id="pricing">
       <h3>Pricing</h3>
       <p className="pricing-note">
-  Founding Client Pricing — The first 25 clients receive 25% off setup fees as part of our launch offer.
+      Founding Client Pricing - I’m offering a discounted setup fee for the first 25 clients while I build out my portfolio.
 </p>
       <div className="pricing-container">
   {plans.map((plan, index) => (

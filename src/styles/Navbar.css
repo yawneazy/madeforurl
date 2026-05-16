@@ -1,7 +1,6 @@
 /* =========================
-   NAVBAR BASE
+   NAVBAR
 ========================= */
-
 .navbar {
     position: sticky;
     top: 0;
@@ -15,14 +14,12 @@
   
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-  
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.08); */
   }
   
   /* =========================
      BRAND
   ========================= */
-  
   .brand {
     font-size: 1.1rem;
     font-weight: 700;
@@ -42,6 +39,7 @@
   }
   
   .nav-links a {
+    position: relative;
     text-decoration: none;
     color: #333;
     font-weight: 500;
@@ -49,13 +47,24 @@
     transition: 0.2s ease;
   }
   
-  .nav-links a:hover {
-    color: #000;
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 1px;
+    background: var(--petal-rouge);
+    transition: width 0.2s ease;
   }
   
-  /* CTA LINK */
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* CTA (call to action) LINK */
   .cta-link {
-    background: #7161EF;
+    background: var(--petal-rouge);
     color: white !important;
     padding: 8px 14px;
     border-radius: 8px;
@@ -63,7 +72,7 @@
   }
   
   .cta-link:hover {
-    background: var(--color-med-green);
+    background: var(--petal-rouge);
     transform: translateY(-1px);
   }
   

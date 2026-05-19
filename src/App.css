@@ -22,8 +22,6 @@ html {
   color: var(--text-heading);
 }
 
-
-
 .hero-subtext {
   font-size: 1.2rem;
   color: var(--text-muted);
@@ -48,7 +46,7 @@ html {
 }
 
 .start-button:hover {
-  background-color: var(--petal-rouge);
+  background-color: white;
   color: var(--petal-rouge);
   border: 2px solid var(--pedal-rouge);
 }
@@ -82,7 +80,7 @@ html {
   padding: 100px 20px;
   background: linear-gradient(
     180deg,
-    rgba(183, 156, 237, 0.04),
+    rgba(251, 111, 146, 0.05),
     #ffffff
   );
 }
@@ -162,7 +160,7 @@ html {
   padding: 80px 20px;
   background: linear-gradient(
     180deg,
-    rgba(251, 111, 146, 0.05),
+    rgba(183, 156, 237, 0.04),
     #ffffff
   );
 }

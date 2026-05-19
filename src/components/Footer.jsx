@@ -1,13 +1,21 @@
 import React from "react";
 import "../styles/Footer.css";
 import { FaLinkedin, FaInstagram} from "react-icons/fa";
+import mainLogo from '../images/madeforurl-01.png' 
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-brand">
-          <h3>MadeForURL</h3>
+           {/* Main Logo */}
+      <a href="#home" >
+        <img
+            className="main-logo"
+            src={mainLogo}
+            alt="main logo"
+          />
+      </a>
           <p>Custom websites built for real growth.</p>
         </div>
 
@@ -39,10 +47,9 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} MadeForURL. All rights reserved.</p>
-
+        <p>© {new Date().getFullYear()} MadeForURL Web Services | Privacy Policy | Terms of Use</p>
         <p className="built-by">
-          Built by <a href="https://yourportfolio.com">Alyssa</a>
+          Built by <a href="https://alyolson.com">Alyssa</a>
         </p>
       </div>
     </footer>

@@ -4,6 +4,7 @@
 .navbar {
     position: sticky;
     top: 0;
+    height: 50px;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -11,24 +12,21 @@
     padding: 1rem 1.5rem;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-    /* border-bottom: 1px solid rgba(0, 0, 0, 0.08); */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
   
   /* =========================
-     BRAND
+     NAV LOGO
   ========================= */
-  .brand {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #111;
-    text-decoration: none;
-    letter-spacing: -0.5px;
+  .main-logo {
+    width: 100px;
+    height: auto;
+    display: block;
   }
   
   /* =========================
      DESKTOP NAV
   ========================= */
-  
   .nav-links {
     display: flex;
     align-items: center;

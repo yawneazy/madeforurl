@@ -23,6 +23,12 @@
     flex-direction: column;
     gap: 10px;
   }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
   
   .footer a {
     text-decoration: none;

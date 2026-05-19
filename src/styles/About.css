@@ -1,0 +1,49 @@
+
+.bio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .home-bio-photo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  }
+  
+  .bio-text {
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  .bio-text h2 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+  }
+  
+  .bio-text p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: #5f5568;
+  }
+  
+  @media (max-width: 768px) {
+  
+    .bio-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .bio-text {
+      text-align: center;
+    }
+  
+  }

@@ -1,0 +1,71 @@
+
+/* ***************** HERO ****************** */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.5px;
+    color: var(--text-heading);
+  }
+  
+  .hero-subtext {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+  
+  .hero-subtext span {
+    color: var(--petal-rouge);
+    font-weight: 600;
+  }
+  
+  .hero-actions {
+    /* display: flex; */
+    gap: 16px;
+    /* align-items: center; */
+  }
+  
+  .start-button {
+    padding: 12px 24px;
+    background-color: var(--petal-rouge);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s ease;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+  }
+  
+  .start-button:hover {
+    background-color: white;
+    color: var(--petal-rouge);
+    border: 1px solid var(--petal-rouge);
+  }
+  
+  .secondary-link {
+    padding: 12px 24px;
+    border: 1px solid var(--accent-light);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    background: transparent;
+    transition: 0.25s ease;
+  }
+  
+  .secondary-link:hover {
+    color: var(--accent-deep);
+    transform: translateY(-2px);
+  }
+  

@@ -1,6 +1,4 @@
-/* =========================
-   NAVBAR
-========================= */
+/************* NAVBAR **************/
 .navbar {
     position: sticky;
     top: 0;
@@ -15,25 +13,22 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
   
-  /* =========================
-     NAV LOGO
-  ========================= */
+/************* NAV lOGO **************/
   .main-logo {
     width: 100px;
     height: auto;
     display: block;
   }
   
-  /* =========================
-     DESKTOP NAV
-  ========================= */
+ /************* DESKTOP NAV **************/
   .nav-links {
     display: flex;
     align-items: center;
     gap: 1.5rem;
   }
   
-  .nav-links a {
+  .nav-links a, 
+  .nav-links button {
     position: relative;
     text-decoration: none;
     color: #333;
@@ -42,7 +37,8 @@
     transition: 0.2s ease;
   }
   
-  .nav-links a::after {
+  .nav-links a::after,
+  .nav-links button::after  {
     content: "";
     position: absolute;
     left: 0;
@@ -57,8 +53,7 @@
     width: 100%;
   }
   
-  /* CTA (call to action) LINK */
-  .cta-link {
+  .contact-form {
     background: var(--petal-rouge);
     color: white !important;
     padding: 8px 14px;
@@ -66,7 +61,7 @@
     transition: 0.2s ease;
   }
   
-  .cta-link:hover {
+  .contact-form:hover {
     background: var(--petal-rouge);
     transform: translateY(-1px);
   }
@@ -75,10 +70,7 @@
     scroll-margin-top: 80px;
   }
   
-  /* =========================
-     BURGER MENU
-  ========================= */
-  
+ /************* HAMBURGER MENU **************/
   .burger-menu {
     display: none;
     flex-direction: column;
@@ -106,10 +98,7 @@
     transform: translateY(-7px) rotate(-45deg);
   }
   
-  /* =========================
-     MOBILE NAV
-  ========================= */
-  
+ /************* MOBILE NAV **************/
   .mobile-nav {
     position: absolute;
     top: 100%;
@@ -125,6 +114,7 @@
     opacity: 0;
     pointer-events: none;
     transition: all 0.25s ease;
+    text-align: center;
   }
   
   .mobile-nav.visible {
@@ -144,16 +134,21 @@
   .mobile-nav .cta-link {
     text-align: center;
   }
+
+  .mobile-nav {
+    display: none;
+  }
   
-  /* =========================
-     MOBILE
-  ========================= */
   @media (max-width: 768px) {
     .nav-links.desktop-nav {
       display: none;
     }
   
     .burger-menu {
+      display: flex;
+    }
+
+    .mobile-nav {
       display: flex;
     }
   }

@@ -1,0 +1,78 @@
+
+.how {
+    padding: 100px 20px;
+    background: linear-gradient(
+      180deg,
+      rgba(251, 111, 146, 0.05),
+      #ffffff
+    );
+  }
+  
+  .how-content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .how-title {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--text-heading);
+    margin-bottom: 20px;
+  }
+  
+  .how-subtext {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 70px auto;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  
+  .how-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+  }
+  
+  .how-actions div,
+  .how-actions > h3,
+  .how-actions > p {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  
+  /* Step cards */
+  
+  .how-actions h3 {
+    font-size: 1.35rem;
+    color: var(--text-heading);
+    margin-bottom: 16px;
+  }
+  
+  .how-actions p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  
+  /* Hover effect */
+  /* .how-actions div:hover {
+    transform: translateY(-4px);
+    transition: 0.25s ease;
+  } */
+  
+  /* Mobile */
+  
+  @media (max-width: 768px) {
+    .how-title {
+      font-size: 2.2rem;
+    }
+  
+    .how-subtext {
+      font-size: 1rem;
+    }
+  }

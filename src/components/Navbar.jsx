@@ -1,59 +1,79 @@
 import React, { useState } from "react";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
-import mainLogo from '../images/madeforurl-01.png';
+import mainLogo from "../images/madeforurl-01.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
+  const closeMenu = () => setIsMenuOpen(false);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  // 🔥 scroll helper that always works
+  const goToSection = (id) => {
+    closeMenu();
+
+    if (location.pathname !== "/") {
+      navigate("/");
+
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 100);
+    } else {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
     <nav className="navbar">
-      {/* Main Logo */}
-      <a href="#home" className="brand">
-        <img
-            className="main-logo"
-            src={mainLogo}
-            alt="main logo"
-          />
-      </a>
+      {/* LOGO */}
+      <NavLink to="/" className="brand" onClick={closeMenu}>
+        <img className="main-logo" src={mainLogo} alt="logo" />
+      </NavLink>
 
-      {/* Burger */}
+      {/* BURGER */}
       <div
         className={`burger-menu ${isMenuOpen ? "open" : ""}`}
         onClick={toggleMenu}
       >
-        <div className="burger-bar"></div>
-        <div className="burger-bar"></div>
-        <div className="burger-bar"></div>
+        <div className="burger-bar" />
+        <div className="burger-bar" />
+        <div className="burger-bar" />
       </div>
 
-      {/* Desktop Links */}
+      {/* DESKTOP NAV */}
       <div className="nav-links desktop-nav">
-        <a href="#how">Process</a>
-        <a href="#why">Why Us</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="#contact" className="cta-link">
-          Contact
-        </a>
+        <button onClick={() => goToSection("how")}>Process</button>
+        <button onClick={() => goToSection("why")}>Why Us</button>
+        <button onClick={() => goToSection("pricing")}>Pricing</button>
+        <button onClick={() => goToSection("about")}>About</button>
+
+        <NavLink
+          to="/contact"
+          className="contact-form"
+          onClick={closeMenu}
+        >
+          Request A Consultation
+        </NavLink>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`mobile-nav ${isMenuOpen ? "visible" : "hidden"}`}>
-      <a href="#how" onClick={handleLinkClick}>Process</a>
-        <a href="#why" onClick={handleLinkClick}>Why Us</a>
-        <a href="#pricing" onClick={handleLinkClick}>Pricing</a>
-        <a href="#about" onClick={handleLinkClick}>About</a>
-        <a href="#contact" onClick={handleLinkClick} className="cta-link">
-          Contact
-        </a>
+      {/* MOBILE NAV */}
+      <div className={`mobile-nav ${isMenuOpen ? "visible" : ""}`}>
+        <button onClick={() => goToSection("how")}>Process</button>
+        <button onClick={() => goToSection("why")}>Why Us</button>
+        <button onClick={() => goToSection("pricing")}>Pricing</button>
+        <button onClick={() => goToSection("about")}>About</button>
+
+        <NavLink to="/contact" onClick={closeMenu}>
+          Request A Consultation
+        </NavLink>
       </div>
     </nav>
   );

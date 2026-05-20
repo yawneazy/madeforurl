@@ -2,6 +2,8 @@ import React from "react";
 import "../styles/Footer.css";
 import { FaLinkedin, FaInstagram} from "react-icons/fa";
 import mainLogo from '../images/madeforurl-01.png' 
+import { NavLink } from "react-router-dom";
+import { IoIosMail } from "react-icons/io";
 
 export default function Footer() {
   return (
@@ -16,7 +18,8 @@ export default function Footer() {
             alt="main logo"
           />
       </a>
-          <p>Custom websites built for real growth.</p>
+      {/* Built for your brand. Made for your URL. */}
+          <p>Custom websites made for your URL.</p>
         </div>
 
         <div className="footer-links">
@@ -28,7 +31,14 @@ export default function Footer() {
         </div>
 
         <div className="footer-contact">
-          {/* <a href="mailto:madeforurl@gmail.com"></a> */}
+          <a href="mailto:madeforurl@gmail.com"
+  target="_blank"
+  rel="noreferrer"
+  className="social-link">
+            <IoIosMail className="social-icon"/>
+            madeforurl@gmail.com
+      </a>
+
           <a href="https://www.linkedin.com/in/alyssayanezolson/"
   target="_blank"
   rel="noreferrer"
@@ -47,7 +57,9 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} MadeForURL Web Services | Privacy Policy | Terms of Use</p>
+        <p>© {new Date().getFullYear()} MadeForURL Web Services | {" "}
+    <NavLink to="/privacypolicy">Privacy Policy</NavLink> |{" "} 
+    <NavLink to="/terms">Terms of Use</NavLink> </p>
         <p className="built-by">
           Built by <a href="https://alyolson.com">Alyssa</a>
         </p>

@@ -1,0 +1,63 @@
+.legal-page {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    padding: 4rem 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Left side (title area) */
+  .privacy-right-side {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    height: fit-content;
+  }
+  
+  .privacy-right-side h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .privacy-right-side p {
+    color: #666;
+  }
+  
+  /* Right side content */
+  .privacy-left-side h2 {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+  }
+  
+  .privacy-left-side p {
+    line-height: 1.6;
+    color: #333;
+    margin-top: 0.5rem;
+  }
+  
+  /* Lists */
+  .privacy-left-side ul {
+    margin: 0.8rem 0 1.5rem 1.2rem;
+    padding-left: 1rem;
+  }
+  
+  .privacy-left-side li {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .legal-page {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem 5%;
+    }
+  
+    .privacy-right-side {
+      position: relative;
+      top: auto;
+    }
+  }

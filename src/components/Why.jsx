@@ -32,7 +32,7 @@ function Why() {
     
       const comparisonRows = [
         ["Built around your brand", "✓", "Limited by templates"],
-            // ["Custom Design", "✅", "Limited by templates"],
+            // ["Custom Design", "✓", "Limited by templates"],
       ["Scalable Features", "✓", "Limited by platform rules"],
       ["Direct Support", "✓", "Platform support only"],
       ["Full customization", "✓", "Limited"],

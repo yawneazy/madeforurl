@@ -10,7 +10,9 @@ import Pricing from "./components/Pricing";
 import About from "./components/About";
 import Connect from "./components/Connect";
 
-import Contact from "./components/Contact";
+import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
 
 function App() {
   return (
@@ -33,8 +35,10 @@ function App() {
           }
         />
 
-        {/* CONTACT PAGE */}
+        {/* PAGES */}
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
 
       <Footer />

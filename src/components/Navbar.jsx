@@ -57,7 +57,7 @@ const Navbar = () => {
 
         <NavLink
           to="/contact"
-          className="contact-form"
+          className="contact-form-btn"
           onClick={closeMenu}
         >
           Request A Consultation
@@ -71,7 +71,7 @@ const Navbar = () => {
         <button onClick={() => goToSection("pricing")}>Pricing</button>
         <button onClick={() => goToSection("about")}>About</button>
 
-        <NavLink to="/contact" onClick={closeMenu}>
+        <NavLink to="/contact" onClick={closeMenu} className="contact-form-btn"> 
           Request A Consultation
         </NavLink>
       </div>

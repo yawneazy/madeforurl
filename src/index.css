@@ -53,9 +53,6 @@ body {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  /* box-sizing: border-box;
-  text-align: center; */
-  /* border-inline: 1px solid var(--border); */
 }
 
 /* =========================

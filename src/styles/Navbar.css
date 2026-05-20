@@ -20,25 +20,55 @@
     display: block;
   }
   
- /************* DESKTOP NAV **************/
+ /************* DESKTOP & MOBILE LINK STYLING **************/
   .nav-links {
     display: flex;
     align-items: center;
     gap: 1.5rem;
   }
   
-  .nav-links a, 
-  .nav-links button {
+  .nav-links a,
+  .mobile-nav a {
     position: relative;
+    display: inline-block;
     text-decoration: none;
     color: #333;
     font-weight: 500;
     font-size: 0.95rem;
+}
+
+  .nav-links button,
+  .mobile-nav button {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
     transition: 0.2s ease;
+
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .nav-links a::after,
+  .mobile-nav a::after {
+    content: "";
+    position: absolute;
+  
+    left: 0;
+    bottom: -5px;
+  
+    width: 0%;
+    height: 1px;
+  
+    background: var(--petal-rouge);
+    transition: width 0.2s ease;
   }
   
-  .nav-links a::after,
-  .nav-links button::after  {
+  .nav-links button::after,
+  .mobile-nav button::after   {
     content: "";
     position: absolute;
     left: 0;
@@ -49,21 +79,38 @@
     transition: width 0.2s ease;
   }
   
-  .nav-links a:hover::after {
+  .nav-links a:hover::after,
+  .nav-links button:hover::after,
+  .mobile-nav a:hover::after,
+  .mobile-nav button:hover::after {
     width: 100%;
   }
+
+  .nav-links .contact-form-btn,
+.mobile-nav .contact-form-btn {
+  color: white;
+}
   
-  .contact-form {
+ /************* CONSULTATION BUTTON **************/
+  .contact-form-btn {
     background: var(--petal-rouge);
-    color: white !important;
+    color: white;
     padding: 8px 14px;
     border-radius: 8px;
     transition: 0.2s ease;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    transition: all 0.2s ease;
   }
   
-  .contact-form:hover {
-    background: var(--petal-rouge);
+  .contact-form-btn:hover {
     transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  }
+
+  .contact-form-btn::after {
+    display: none;
   }
 
   section {
@@ -106,6 +153,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.2rem;
     padding: 1.5rem;
     background: white;
@@ -123,18 +171,6 @@
     pointer-events: auto;
   }
   
-  .mobile-nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  
-  /* CTA in mobile */
-  .mobile-nav .cta-link {
-    text-align: center;
-  }
-
   .mobile-nav {
     display: none;
   }

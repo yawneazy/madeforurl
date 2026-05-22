@@ -1,7 +1,8 @@
 .footer {
     padding: 60px 20px 30px;
-    background: #fff;
+    background: var(--petal-rouge);
     border-top: 1px solid rgba(0,0,0,0.08);
+    color: white;
   }
   
   .footer-grid {
@@ -47,6 +48,7 @@
     flex-wrap: wrap;
     font-size: 0.9rem;
     color: #777;
+    /* background: white; */
   }
   
   .built-by a {

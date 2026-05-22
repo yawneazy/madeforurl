@@ -91,3 +91,124 @@
   /* .pricing-button:hover {
     opacity: 0.85;
   } */
+
+  /************* COMPARE BUTTON *************/
+
+.compare-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.compare-plans-btn {
+  padding: 12px 26px;
+  background: var(--petal-rouge);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.compare-plans-btn:hover {
+  transform: translateY(-2px);
+  background: white;
+  color: var(--petal-rouge);
+  border: 2px solid var(--petal-rouge);
+}
+
+
+/************* COMPARISON TABLE *************/
+
+.comparison-table-wrapper {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  overflow-x: auto; /* important for mobile */
+}
+
+.pricing-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  background: white;
+}
+
+
+/* Header */
+.plan-icon {
+  font-size: 2rem;
+  color: var(--petal-rouge);
+
+  margin-bottom: 16px;
+
+  display:flex;
+  justify-content:center;
+}
+
+.pricing-comparison-table thead {
+  background: var(--petal-rouge);
+  color: white;
+}
+
+.pricing-comparison-table th {
+  padding: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+/* Cells */
+
+.pricing-comparison-table td {
+  padding: 18px;
+  border-bottom: 1px solid #eee;
+  color: var(--text);
+}
+
+/* First column */
+
+.pricing-comparison-table td:first-child,
+.pricing-comparison-table th:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Other columns */
+
+.pricing-comparison-table td:not(:first-child),
+.pricing-comparison-table th:not(:first-child) {
+  text-align: center;
+}
+
+/* Alternating rows */
+
+.pricing-comparison-table tbody tr:nth-child(even) {
+  background: var(--bg);
+}
+
+.pricing-comparison-table tbody tr {
+  transition: 0.2s ease;
+}
+
+.pricing-comparison-table tbody tr:hover {
+  background: rgba(212,122,138,.08);
+}
+
+
+/************* MOBILE *************/
+
+@media (max-width:768px){
+
+  .comparison-table-wrapper {
+      padding-bottom:10px;
+  }
+
+  .pricing-comparison-table{
+      min-width:700px;
+  }
+
+}

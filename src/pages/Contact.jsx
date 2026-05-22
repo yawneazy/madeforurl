@@ -18,10 +18,75 @@ function Contact() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log(formData);
+    // };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
+    
+        try {
+            const response = await fetch(
+                "http://localhost:8000/api/contact",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                }
+            );
+    
+            const text = await response.text();
+    
+            console.log("Raw response:", text);
+    
+            const result = JSON.parse(text);
+    
+            console.log(result);
+    
+        } catch (error) {
+            console.error("FETCH ERROR:", error);
+        }
     };
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    
+    //     try {
+    //         const response = await fetch(
+    //             "http://localhost:5000/api/contact",
+    //             {
+    //                 method: "POST",
+    //                 headers: {
+    //                     "Content-Type": "application/json"
+    //                 },
+    //                 body: JSON.stringify(formData)
+    //             }
+    //         );
+    
+    //         const result = await response.json();
+    
+    //         if (result.success) {
+    //             alert("Message sent!");
+    
+    //             setFormData({
+    //                 firstName: "",
+    //                 lastName: "",
+    //                 email: "",
+    //                 website: "",
+    //                 message: ""
+    //             });
+    
+    //         } else {
+    //             alert("Something went wrong.");
+    //         }
+    
+    //     } catch (error) {
+    //         console.error(error);
+    //         alert("Error sending message");
+    //     }
+    // };
 
     return (
         <section className="contact-page">
@@ -35,6 +100,7 @@ function Contact() {
                     <div className="form-group">
                         <label>First Name *</label>
                         <input
+                        required
                             name="firstName"
                             value={formData.firstName}
                             onChange={handleChange}
@@ -44,6 +110,7 @@ function Contact() {
                     <div className="form-group">
                         <label>Last Name *</label>
                         <input
+                        required
                             name="lastName"
                             value={formData.lastName}
                             onChange={handleChange}
@@ -55,6 +122,7 @@ function Contact() {
                 <div className="form-group">
                     <label>Email *</label>
                     <input
+                    required
                         name="email"
                         type="email"
                         value={formData.email}
@@ -63,8 +131,9 @@ function Contact() {
                 </div>
 
                 <div className="form-group">
-                    <label>Website URL</label>
+                    <label>Website URL *</label>
                     <input
+                    required
                         name="website"
                         type="text"
                         value={formData.website}
@@ -75,6 +144,7 @@ function Contact() {
                 <div className="form-group">
                     <label>Message *</label>
                     <textarea
+                        required
                         name="message"
                         rows="4"
                         value={formData.message}

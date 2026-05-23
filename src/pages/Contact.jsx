@@ -38,9 +38,9 @@ function Contact() {
                 }
             );
     
-            const text = await response.text();
+            // const text = await response.text();
     
-            console.log("Raw response:", text);
+            // console.log("Raw response:", text);
     
             const result = JSON.parse(text);
     
@@ -50,44 +50,7 @@ function Contact() {
             console.error("FETCH ERROR:", error);
         }
     };
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    
-    //     try {
-    //         const response = await fetch(
-    //             "http://localhost:5000/api/contact",
-    //             {
-    //                 method: "POST",
-    //                 headers: {
-    //                     "Content-Type": "application/json"
-    //                 },
-    //                 body: JSON.stringify(formData)
-    //             }
-    //         );
-    
-    //         const result = await response.json();
-    
-    //         if (result.success) {
-    //             alert("Message sent!");
-    
-    //             setFormData({
-    //                 firstName: "",
-    //                 lastName: "",
-    //                 email: "",
-    //                 website: "",
-    //                 message: ""
-    //             });
-    
-    //         } else {
-    //             alert("Something went wrong.");
-    //         }
-    
-    //     } catch (error) {
-    //         console.error(error);
-    //         alert("Error sending message");
-    //     }
-    // };
-
+ 
     return (
         <section className="contact-page">
 

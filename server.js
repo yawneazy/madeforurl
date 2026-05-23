@@ -65,7 +65,8 @@ const app = express();
 
 // app.use(cors());
 app.use(cors({
-    origin: "https://madeforurl-f9296.web.app"
+  origin: "madeforurl-78y5qlb2d-yawneazy-7504s-projects.vercel.app"
+    // origin: "https://madeforurl-f9296.web.app"
     // origin: "*"
   }));
 app.use(express.json());
@@ -80,7 +81,7 @@ app.post("/api/contact", async (req, res) => {
     try {
         const { firstName, lastName, email, website, message } = req.body;
 
-        console.log("CONTACT RECEIVED:", req.body);
+        // console.log("CONTACT RECEIVED:", req.body);
 
         const sheets = getSheets();
 
@@ -103,7 +104,7 @@ app.post("/api/contact", async (req, res) => {
         return res.json({ success: true });
 
     } catch (error) {
-        console.error("SHEETS ERROR:", error);
+        // console.error("SHEETS ERROR:", error);
 
         return res.status(500).json({
             success: false,
@@ -111,7 +112,7 @@ app.post("/api/contact", async (req, res) => {
         });
     }
 });
-console.log("C - before listen");
+// console.log("C - before listen");
 
 const PORT = process.env.PORT || 8000 ;
 

@@ -28,7 +28,7 @@ function Contact() {
     
         try {
             const response = await fetch(
-                "http://localhost:8000/api/contact",
+                "https://madeforurl.onrender.com/api/contact",
                 {
                     method: "POST",
                     headers: {

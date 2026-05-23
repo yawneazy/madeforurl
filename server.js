@@ -22,25 +22,36 @@ import dotenv from "dotenv";
 import { Resend } from "resend";
 import { google } from "googleapis";
 
-// const auth = new google.auth.GoogleAuth({
-//     keyFile: "credentials.json",
-//     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-// });
-
-// const sheets = google.sheets({ version: "v4", auth });
-
-console.log("A - imports loaded");
-
+// console.log("A - imports loaded");
 let sheets;
+
+// function getSheets() {
+//     if (!sheets) {
+//         const auth = new google.auth.GoogleAuth({
+//             keyFile: "credentials.json",
+//             scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+//         });
+
+//         sheets = google.sheets({ version: "v4", auth });
+//     }
+
+//     return sheets;
+// }
 
 function getSheets() {
     if (!sheets) {
         const auth = new google.auth.GoogleAuth({
-            keyFile: "credentials.json",
+            credentials: {
+                client_email: process.env.GOOGLE_CLIENT_EMAIL,
+                private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+            },
             scopes: ["https://www.googleapis.com/auth/spreadsheets"],
         });
 
-        sheets = google.sheets({ version: "v4", auth });
+        sheets = google.sheets({
+            version: "v4",
+            auth,
+        });
     }
 
     return sheets;
@@ -48,16 +59,16 @@ function getSheets() {
 
 dotenv.config();
 
-console.log("B - before sheets setup");
+// console.log("B - before sheets setup");
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 app.use(cors({
-    // origin: "madeforurl-f9296.web.app"
-    origin: "*"
+    origin: "https://madeforurl-f9296.web.app"
+    // origin: "*"
   }));
-// app.use(express.json());
+app.use(express.json());
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -89,22 +100,6 @@ app.post("/api/contact", async (req, res) => {
             }
         });
 
-        // await sheets.spreadsheets.values.append({
-        //     spreadsheetId: "1AXRj4tPqoqWdOwJQVTXxttPd5gh5upgXUWt1pt5RoiM",
-        //     range: "Sheet1!A:F",
-        //     valueInputOption: "USER_ENTERED",
-        //     requestBody: {
-        //         values: [[
-        //             new Date().toISOString(),
-        //             firstName,
-        //             lastName,
-        //             email,
-        //             website,
-        //             message
-        //         ]]
-        //     }
-        // });
-
         return res.json({ success: true });
 
     } catch (error) {
@@ -118,7 +113,7 @@ app.post("/api/contact", async (req, res) => {
 });
 console.log("C - before listen");
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000 ;
 
 app.listen(PORT, () => {
     console.log("Server running on port", PORT);

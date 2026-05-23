@@ -65,7 +65,7 @@ const app = express();
 
 // app.use(cors());
 app.use(cors({
-  origin: "madeforurl-78y5qlb2d-yawneazy-7504s-projects.vercel.app"
+  origin: "https://madeforurl-78y5qlb2d-yawneazy-7504s-projects.vercel.app"
     // origin: "https://madeforurl-f9296.web.app"
     // origin: "*"
   }));

@@ -63,12 +63,21 @@ dotenv.config();
 
 const app = express();
 
-// app.use(cors());
 app.use(cors({
-  // origin: "https://madeforurl-78y5qlb2d-yawneazy-7504s-projects.vercel.app"
-    // origin: "https://madeforurl-f9296.web.app"
-    origin: "*"
-  }));
+  origin: (origin, callback) => {
+    const allowed = [
+      "https://madeforurl.vercel.app",
+      "https://madeforurl-78y5qlb2d-yawneazy-7504s-projects.vercel.app"
+    ];
+
+    if (!origin || allowed.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+}));
+
 app.use(express.json());
 
 const resend = new Resend(process.env.RESEND_API_KEY);

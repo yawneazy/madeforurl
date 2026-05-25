@@ -55,39 +55,69 @@ app.get("/test", (req, res) => {
 
 app.post("/api/contact", async (req, res) => {
     try {
-        const { firstName, lastName, email, website, message } = req.body;
-
-        // console.log("CONTACT RECEIVED:", req.body);
+        console.log("BODY:", req.body);
 
         const sheets = getSheets();
+
+        console.log("Sheets loaded");
 
         await sheets.spreadsheets.values.append({
             spreadsheetId: "1AXRj4tPqoqWdOwJQVTXxttPd5gh5upgXUWt1pt5RoiM",
             range: "Sheet1!A:F",
             valueInputOption: "USER_ENTERED",
             requestBody: {
-                values: [[
-                    new Date().toISOString(),
-                    firstName,
-                    lastName,
-                    email,
-                    website,
-                    message
-                ]]
+                values: [["TEST"]]
             }
         });
 
-        return res.json({ success: true });
+        console.log("WRITE SUCCESS");
+
+        res.json({ success: true });
 
     } catch (error) {
-        // console.error("SHEETS ERROR:", error);
-
-        return res.status(500).json({
+        console.error("FULL ERROR:", error);
+        res.status(500).json({
             success: false,
             error: error.message
         });
     }
 });
+
+// app.post("/api/contact", async (req, res) => {
+//     try {
+//         const { firstName, lastName, email, website, message } = req.body;
+
+//         // console.log("CONTACT RECEIVED:", req.body);
+
+//         const sheets = getSheets();
+
+//         await sheets.spreadsheets.values.append({
+//             spreadsheetId: "1AXRj4tPqoqWdOwJQVTXxttPd5gh5upgXUWt1pt5RoiM",
+//             range: "Sheet1!A:F",
+//             valueInputOption: "USER_ENTERED",
+//             requestBody: {
+//                 values: [[
+//                     new Date().toISOString(),
+//                     firstName,
+//                     lastName,
+//                     email,
+//                     website,
+//                     message
+//                 ]]
+//             }
+//         });
+
+//         return res.json({ success: true });
+
+//     } catch (error) {
+//         // console.error("SHEETS ERROR:", error);
+
+//         return res.status(500).json({
+//             success: false,
+//             error: error.message
+//         });
+//     }
+// });
 // console.log("C - before listen");
 
 const PORT = process.env.PORT || 8000 ;

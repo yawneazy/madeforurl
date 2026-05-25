@@ -23,7 +23,7 @@ function Contact() {
     
         try {
             const response = await fetch(
-                "https://madeforurl.onrender.com/api/contact",
+                "/api/contact",
                 {
                     method: "POST",
                     headers: {

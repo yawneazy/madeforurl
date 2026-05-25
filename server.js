@@ -22,17 +22,13 @@ app.use(express.json());
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// app.get("/test", (req, res) => {
-//     res.json({ ok: true });
-// });
-
 app.post("/api/contact", async (req, res) => {
     try {
         const { firstName, lastName, email, website, message } = req.body;
 
         const data = await resend.emails.send({
             from: "MadeForURL <onboarding@resend.dev>",
-            to: "madeforurl@gmail.com", // <-- CHANGE THIS
+            to: "madeforurl@gmail.com", 
             subject: `New Contact Form Message from ${firstName} ${lastName}`,
             html: `
                 <h2>New Contact Form Submission</h2>
@@ -54,6 +50,13 @@ app.post("/api/contact", async (req, res) => {
         });
     }
 });
+
+const PORT = process.env.PORT || 8000 ;
+
+app.listen(PORT, () => {
+    console.log("Server running on port", PORT);
+});
+
 
 //  --------- POSSIBLE LATER IMPLEMENTATION OF GOOGLE SHEETS
 // console.log("A - imports loaded");
@@ -118,9 +121,3 @@ app.post("/api/contact", async (req, res) => {
 //     }
 // });
 // console.log("C - before listen");
-
-const PORT = process.env.PORT || 8000 ;
-
-app.listen(PORT, () => {
-    console.log("Server running on port", PORT);
-});

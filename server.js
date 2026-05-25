@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import { google } from "googleapis";
 
 dotenv.config();
+const app = express();
 
 // console.log("A - imports loaded");
 let sheets;
@@ -30,19 +31,19 @@ function getSheets() {
 
 // console.log("B - before sheets setup");
 
-const app = express();
-
 app.use(cors({
     origin: [
       "https://madeforurl.com",
       "https://www.madeforurl.com",
-      "https://madeforurl.vercel.app",
-      "https://madeforurl-78y5qlb2d-yawneazy-7504s-projects.vercel.app"
+      "https://madeforurl.vercel.app"
+    //   "https://madeforurl-78y5qlb2d-yawneazy-7504s-projects.vercel.app"
     ],
     methods: ["GET", "POST", "OPTIONS"],
-    credentials: true
+    // credentials: true
+    allowedHeaders: ["Content-type"]
   }));
 
+  app.options("*", cors());
 app.use(express.json());
 
 // const resend = new Resend(process.env.RESEND_API_KEY);

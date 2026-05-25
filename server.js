@@ -66,6 +66,8 @@ const app = express();
 app.use(cors({
   origin: (origin, callback) => {
     const allowed = [
+      "https://madeforurl.com",
+      "https://www.madeforurl.com",
       "https://madeforurl.vercel.app",
       "https://madeforurl-78y5qlb2d-yawneazy-7504s-projects.vercel.app"
     ];
@@ -77,7 +79,7 @@ app.use(cors({
     }
   }
 }));
-
+app.options("*", cors()); 
 app.use(express.json());
 
 const resend = new Resend(process.env.RESEND_API_KEY);

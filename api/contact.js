@@ -1,35 +1,35 @@
 import { Resend } from "resend";
-// import { google } from "googleapis";
+import { google } from "googleapis";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// async function appendToSheet({ firstName, lastName, email, website, message }) {
-//   const auth = new google.auth.GoogleAuth({
-//     credentials: {
-//       client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-//       private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
-//     },
-//     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-//   });
+async function appendToSheet({ firstName, lastName, email, website, message }) {
+  const auth = new google.auth.GoogleAuth({
+    credentials: {
+      client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+    },
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
 
-//   const sheets = google.sheets({ version: "v4", auth });
+  const sheets = google.sheets({ version: "v4", auth });
 
-//   await sheets.spreadsheets.values.append({
-//     spreadsheetId: process.env.GOOGLE_SHEET_ID,
-//     range: "Sheet1!A:F",
-//     valueInputOption: "RAW",
-//     requestBody: {
-//       values: [[
-//         new Date().toISOString(),
-//         firstName,
-//         lastName,
-//         email,
-//         website,
-//         message
-//       ]],
-//     },
-//   });
-// }
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: process.env.GOOGLE_SHEET_ID,
+    range: "Sheet1!A:F",
+    valueInputOption: "RAW",
+    requestBody: {
+      values: [[
+        new Date().toISOString(),
+        firstName,
+        lastName,
+        email,
+        website,
+        message
+      ]],
+    },
+  });
+}
 
 
 export default async function handler(req, res) {

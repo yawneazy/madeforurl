@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Contact.css';
+import { FaLinkedin, FaInstagram} from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
 
 function Contact() {
+    // forces page to the top
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -9,6 +16,9 @@ function Contact() {
         website: "",
         message: ""
     });
+
+    const [submitted, setSubmitted] = useState(false);
+    const [failed, SetFailed] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -35,10 +45,10 @@ function Contact() {
     
             const result = await response.json();
     
-            console.log(result);
+            // console.log(result);
     
             if (result.success) {
-                alert("Message sent!");
+                // alert("Message sent!");
     
                 setFormData({
                     firstName: "",
@@ -47,10 +57,14 @@ function Contact() {
                     website: "",
                     message: ""
                 });
+                setSubmitted(true);
+            } else {
+                setFailed(true);
             }
     
         } catch (error) {
             console.error("FETCH ERROR:", error);
+            setFailed(true);
         }
     };
  
@@ -59,8 +73,34 @@ function Contact() {
 
             <h2>Get in touch</h2>
 
-            <form id="consultation-form" onSubmit={handleSubmit}>
+            {submitted ? (
+                <div className="thank-you">
+                    <div className="thank-you-icon"></div>
+                    <h1>Thank you for reaching out!</h1>
+                    <p>I'll get back to you as soon as possible!</p>
+                    <a href="/" className="home-btn">Back to home</a>
+            
+                    <h3>Let's Connect</h3>
+                    <div className="thank-you-divider" />
 
+<p className="connect-label">Let's connect</p>
+<div className="thank-you-socials">
+    <a href="mailto:madeforurl@gmail.com" target="_blank" rel="noreferrer" className="social-link">
+        <IoIosMail className="social-icon" />
+        madeforurl@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/alyssayanezolson/" target="_blank" rel="noreferrer" className="social-link">
+        <FaLinkedin className="social-icon" />
+        LinkedIn
+    </a>
+    <a href="https://www.instagram.com/madeforurl" target="_blank" rel="noreferrer" className="social-link">
+        <FaInstagram className="social-icon" />
+        Instagram
+    </a>
+</div>
+                    </div>
+            ) : ( 
+            <form id="consultation-form" onSubmit={handleSubmit}>
                 <div className="name-row">
 
                     <div className="form-group">
@@ -121,6 +161,7 @@ function Contact() {
                 <button type="submit" className="submit-btn">Submit</button>
 
             </form>
+            )}
         </section>
     );
 }

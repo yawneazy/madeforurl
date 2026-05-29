@@ -111,6 +111,7 @@
   .why-bottom h3 {
     font-size: 2rem;
     margin-bottom: 20px;
+    line-height: 1;
   }
   
   .why-bottom p {

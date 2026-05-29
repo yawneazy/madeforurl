@@ -34,9 +34,13 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       {/* LOGO */}
-      <NavLink to="/" className="brand" onClick={closeMenu}>
-        <img className="main-logo" src={mainLogo} alt="logo" />
-      </NavLink>
+      <NavLink 
+  to="/" 
+  className="brand" 
+  onClick={() => { closeMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+>
+  <img className="main-logo" src={mainLogo} alt="logo" />
+</NavLink>
 
       {/* BURGER */}
       <div

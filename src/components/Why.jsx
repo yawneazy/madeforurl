@@ -45,7 +45,7 @@ function Why() {
         <div className="why-container">
           <div className="why-header">
             <h2 className="why-title">
-              Why Choose MadeforURL?
+              Why Choose MadeForURL?
             </h2>
       
             <p className="why-subtext">

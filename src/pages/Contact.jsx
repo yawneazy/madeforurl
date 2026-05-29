@@ -80,7 +80,7 @@ function Contact() {
                     <p>I'll get back to you as soon as possible!</p>
                     <a href="/" className="home-btn">Back to home</a>
             
-                    <h3>Let's Connect</h3>
+                    {/* <h3>Let's Connect</h3> */}
                     <div className="thank-you-divider" />
 
 <p className="connect-label">Let's connect</p>

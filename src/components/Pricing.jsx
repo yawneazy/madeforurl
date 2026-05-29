@@ -45,13 +45,13 @@ function Pricing() {
           name: "Personal",
           icon: <FaUser/>,
           setup: "$500",
-          monthly: "$5/month",
+          monthly: "$25/month",
           features: [
             "1–3 pages",
             "clean custom design",
             "portfolio/gallery",
             "contact form", 
-            "1-2 edits/month"
+            "1-2 small edits/month"
           ],
           who: "Perfect for individuals who need a simple, clean online presence. Ideal for portfolios, artists, and personal brands looking to showcase their work without the complexity of a full business website.",
         },

@@ -22,6 +22,8 @@
   }
   
   .pricing-card {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #ddd;
     border-radius: 12px;
     padding: 20px;
@@ -31,10 +33,6 @@
     text-align: center;
     transition: transform 0.2s ease;
   }
-  
-  /* .pricing-card:hover {
-    transform: translateY(-5px);
-  } */
   
   .pricing-card.popular {
     border: 2px solid #000;
@@ -87,7 +85,54 @@
     cursor: pointer;
     width: 100%;
   }
+
+  .setup-label {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 6px;
+  }
   
+  .who-text {
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.5;
+  }
+  
+  .popular-th {
+    background: #a93226 !important;
+  }
+  
+  .popular-col {
+    background: rgba(192, 57, 43, 0.06) !important;
+    font-weight: 600;
+  }
+  
+  .table-note {
+    text-align: center;
+    font-size: 11px;
+    color: #aaa;
+    padding: 12px;
+  }
+  
+  .features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  
+  .features-list li::before {
+    content: "✓";
+    color: var(--petal-rouge);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .start-button {
+    margin-top: auto;
+  }
   /* .pricing-button:hover {
     opacity: 0.85;
   } */
@@ -95,13 +140,19 @@
   /************* COMPARE BUTTON *************/
 
 .compare-wrapper {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 40px; */
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 20px;
 }
 
 .compare-plans-btn {
+  padding: 12px 28px;
+  width: auto;
+  display: inline-block;
   padding: 12px 26px;
   background: var(--petal-rouge);
   color: white;
@@ -126,6 +177,7 @@
   margin-top: 40px;
   margin-bottom: 60px;
   overflow-x: auto; /* important for mobile */
+  /* position: relative; */
 }
 
 .pricing-comparison-table {
@@ -198,6 +250,23 @@
   background: rgba(212,122,138,.08);
 }
 
+.setup-only-note {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin: -20px auto 40px;
+  max-width: 500px;
+}
+
+.setup-only-note a {
+  color: var(--petal-rouge);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.setup-only-note a:hover {
+  text-decoration: underline;
+}
 
 /************* MOBILE *************/
 
@@ -211,4 +280,9 @@
       min-width:700px;
   }
 
+  .pricing-comparison-table th,
+  .pricing-comparison-table td {
+      padding: 14px;
+      font-size: 0.95rem;
+  }
 }

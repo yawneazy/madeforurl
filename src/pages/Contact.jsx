@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import '../styles/Contact.css';
 import { FaLinkedin, FaInstagram} from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
@@ -9,6 +10,8 @@ function Contact() {
         window.scrollTo(0, 0);
     }, []);
 
+    const [searchParams] = useSearchParams();
+
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -18,7 +21,9 @@ function Contact() {
     });
 
     const [submitted, setSubmitted] = useState(false);
-    const [failed, SetFailed] = useState(false);
+    // set loading state
+    // const [loading, setLoading] = useState(false);
+    const [failed, setFailed] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -146,6 +151,23 @@ function Contact() {
                         onChange={handleChange}
                     />
                 </div>
+
+                {/* <div className="form-group">
+                <label>Package Interest</label>
+                <select className="plan-picker"
+                    name="packageInterest"
+                    value={formData.packageInterest}
+                    onChange={handleChange}
+                >
+                    <option value="">Select a plan...</option>
+                    <option value="Personal">Personal — $500 setup + $25/mo</option>
+                    <option value="Starter">Starter — $1,500 setup + $50/mo</option>
+                    <option value="Growth">Growth — $2,500 setup + $120/mo</option>
+                    <option value="Growth+">Growth+ — $750 setup + $200/mo</option>
+                    <option value="Setup Only">Setup Only (no maintenance)</option>
+                    <option value="Not sure">Not sure yet</option>
+                </select>
+                </div> */}
 
                 <div className="form-group">
                     <label>Message *</label>

@@ -13,7 +13,7 @@ function Hero() {
         <section className="hero" id="home">
         <div className="hero-content">
         <h1 className="hero-title">
-            Custom websites,   
+            Custom websites,&nbsp;
             <span className="accent" id="accent1"> Made For</span> your <span className="accent" id="accent2">URL</span>
         {/* I build websites made for your <span className="accent">URL</span> */}
             {/* Made for your <span className="accent">URL</span> */}

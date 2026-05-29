@@ -52,7 +52,7 @@ export default function Footer() {
   </div>
 
   <div className="footer-bottom">
-    <p>© {new Date().getFullYear()} MadeForURL Web Services &nbsp;·&nbsp;
+    <p>© {new Date().getFullYear()} MadeForURL LLC &nbsp;·&nbsp;
       <NavLink to="/privacypolicy">Privacy Policy</NavLink> &nbsp;·&nbsp;
       <NavLink to="/terms">Terms of Use</NavLink>
     </p>

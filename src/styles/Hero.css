@@ -1,5 +1,4 @@
 
-/* ***************** HERO ****************** */
 .hero {
     min-height: 85vh;
     display: flex;
@@ -81,3 +80,54 @@
     transform: translateY(-2px);
   }
   
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding: 5rem 1.25rem;
+    }
+  
+    .hero-title {
+      font-size: 2.2rem;
+      line-height: 1.15;
+    }
+  
+    .hero-subtext {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.8rem;
+    }
+  
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .start-button,
+    .secondary-link {
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+  }
+  
+  /* ***************** SMALL PHONES ****************** */
+  @media (max-width: 480px) {
+    .hero {
+      padding: 4rem 1rem;
+    }
+  
+    .hero-title {
+      font-size: 1.9rem;
+    }
+  
+    .hero-subtext {
+      font-size: 0.95rem;
+    }
+  
+    .start-button,
+    .secondary-link {
+      padding: 14px 20px;
+      font-size: 0.95rem;
+    }
+  
+  }

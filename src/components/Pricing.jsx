@@ -19,7 +19,7 @@ function Pricing() {
       features: [
         "Clean custom design",
         "Portfolio or gallery",
-        "Contact form",
+        // "Contact form",
         "Domain + hosting included",
         "1–2 small edits/month",
       ],
@@ -188,7 +188,7 @@ function Pricing() {
             <tr><td>Domain + Hosting</td><td>✓</td><td>✓</td><td>✓</td><td className="popular-col">✓</td></tr>
             <tr><td>Custom Design</td><td>Clean</td><td>Custom</td><td>Custom</td><td className="popular-col">Premium</td></tr>
             <tr><td>Portfolio / Gallery</td><td>✓</td><td>—</td><td>✓</td><td className="popular-col">✓</td></tr>
-            <tr><td>Contact Form</td><td>✓</td><td>✓</td><td>✓</td><td className="popular-col">✓</td></tr>
+            <tr><td>Contact Form</td><td>—</td><td>✓</td><td>✓</td><td className="popular-col">✓</td></tr>
             <tr><td>Integrations</td><td>—</td><td>—</td><td>✓</td><td className="popular-col">✓</td></tr>
             <tr><td>SEO</td><td>—</td><td>Basic</td><td>Basic</td><td className="popular-col">Advanced</td></tr>
             <tr><td>Analytics</td><td>—</td><td>—</td><td>✓</td><td className="popular-col">✓</td></tr>

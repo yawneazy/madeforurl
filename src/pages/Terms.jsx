@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/Terms.css';
 
-function Terms() {
+function Terms() {    
+    // forces page to the top
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="terms-page">
 

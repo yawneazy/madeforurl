@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/PrivacyPolicy.css';
 
 function PrivacyPolicy() {
+        // forces page to the top
+        useEffect(() => {
+            window.scrollTo(0, 0);
+        }, []);
+
     return (
         <div className="legal-page">
             <div className="privacy-right-side">

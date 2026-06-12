@@ -130,9 +130,9 @@ function Pricing() {
     return (
       <section className="pricing" id="pricing">
   <h1 className="pricing-title">Pricing</h1>
-  <p className="pricing-note">
+  {/* <p className="pricing-note">
     🌱 Founding Client Pricing — special rates for the first 10 clients
-  </p>
+  </p> */}
 
   <div className="pricing-container">
     {plans.map((plan, index) => (

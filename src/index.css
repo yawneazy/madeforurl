@@ -39,7 +39,7 @@
    GLOBAL
 ========================= */
 html, body {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   width: 100%;
 }
 

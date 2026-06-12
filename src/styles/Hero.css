@@ -78,20 +78,19 @@
     color: var(--accent-deep);
     transform: translateY(-2px);
   }
-  
   @media (max-width: 768px) {
     .hero {
-      min-height: auto;
-      padding: 5rem 1.25rem;
+      min-height: 90vh;
+      padding: 2rem 1.25rem;
     }
   
     .hero-title {
-      font-size: 2.2rem;
+      font-size: 2.6rem;
       line-height: 1.15;
     }
   
     .hero-subtext {
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.6;
       margin-bottom: 1.8rem;
     }
@@ -109,18 +108,18 @@
     }
   }
   
-  /* ***************** SMALL PHONES ****************** */
   @media (max-width: 480px) {
     .hero {
-      padding: 4rem 1rem;
+      min-height: 92vh;
+      padding: 1.5rem 1rem;
     }
   
     .hero-title {
-      font-size: 1.9rem;
+      font-size: 2.2rem;
     }
   
     .hero-subtext {
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
   
     .start-button,
@@ -128,5 +127,4 @@
       padding: 14px 20px;
       font-size: 0.95rem;
     }
-  
   }

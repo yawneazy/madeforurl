@@ -137,7 +137,7 @@ function Pricing() {
   <div className="pricing-container">
     {plans.map((plan, index) => (
       <div key={index} className={`pricing-card ${plan.popular ? "popular" : ""}`}>
-        {plan.popular && <div className="badge">Most Popular</div>}
+        {plan.popular && <div className="badge">Best Value</div>}
         <div className="plan-icon">{plan.icon}</div>
         <h3 className="plan-name">{plan.name}</h3>
         <p className="setup-price">{plan.setup}</p>

@@ -27,7 +27,7 @@ app.post("/api/contact", async (req, res) => {
         const { firstName, lastName, email, website, message } = req.body;
 
         const data = await resend.emails.send({
-            from: "MadeForURL <onboarding@resend.dev>",
+            from: "MadeForURL <madeforurl@gmail.com>",
             to: "madeforurl@gmail.com", 
             subject: `New Contact Form Message from ${firstName} ${lastName}`,
             html: `

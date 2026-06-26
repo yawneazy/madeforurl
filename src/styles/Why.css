@@ -54,11 +54,22 @@
   .why-card h3 {
     margin-bottom: 14px;
     color: var(--text-heading);
+    text-align: center;
   }
   
   .why-card p {
     color: var(--text-muted);
     line-height: 1.6;
+    text-align: center;
+  }
+
+  .comparison-intro {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .comparison-header h3 {
+    text-align: center;
   }
   
   /* Comparison Table */

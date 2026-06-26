@@ -71,15 +71,12 @@ function Why() {
           </div>
       
           <div className="comparison-wrapper">
-          <p className="comparison-intro">
+            <div className="comparison-header">
+              <h3>Why I don’t use template builders for client sites</h3>
+              <p className="comparison-intro">
         Here’s how I approach websites compared to template builders.
         It’s not that tools like Wix are bad — they just aren’t built for flexibility once you start growing.
       </p>
-            <div className="comparison-header">
-              {/* <h3>
-                MadeforURL vs Template Builders
-              </h3> */}
-              <h3>Why I don’t use template builders for client sites</h3>
             </div>
       
             <div className="comparison-scroll">

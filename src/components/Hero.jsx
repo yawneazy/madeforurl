@@ -38,9 +38,12 @@ function Hero() {
             Get Started
             </a>
 
-            <a href="#why" className="secondary-link">
-            Learn More ↓
-            </a>
+            <a href="#why" className="secondary-link" onClick={(e) => {
+    e.preventDefault();
+    document.getElementById('why')?.scrollIntoView({ behavior: 'smooth' });
+}}>
+    Learn More <span className="learn-more-arrow bounce-arrow">↓</span>
+</a>
         </div>
         </div>
         </section> 

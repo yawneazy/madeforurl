@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import Hero from "./components/Hero";
+import MissionStatement from "./components/MissionStatement";
 import Why from "./components/Why";
 import How from "./components/How";
 import Pricing from "./components/Pricing";
@@ -26,6 +27,7 @@ function App() {
           element={
             <>
               <Hero />
+              <MissionStatement/>
               <Why />
               <How />
               <Pricing />

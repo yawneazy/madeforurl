@@ -38,9 +38,11 @@
 /* =========================
    GLOBAL
 ========================= */
-html, body {
-  /* overflow-x: hidden; */
+
+
+html {
   width: 100%;
+  overflow-x: hidden;
 }
 
 * {

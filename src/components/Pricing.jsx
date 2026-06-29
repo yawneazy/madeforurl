@@ -28,7 +28,7 @@ function Pricing() {
     {
       name: "Starter",
       icon: <FaSeedling />,
-      setup: "$1,500",
+      setup: "$800",
       monthly: "$50/month",
       features: [
         "Clean custom design",
@@ -42,8 +42,8 @@ function Pricing() {
     {
       name: "Growth",
       icon: <FaChartLine />,
-      setup: "$2,500",
-      monthly: "$120/month",
+      setup: "$1,000",
+      monthly: "$100/month",
       features: [
         "Custom design",
         "Multi-section business site",
@@ -57,8 +57,8 @@ function Pricing() {
     {
       name: "Growth+",
       icon: <FaRocket />,
-      setup: "$750",
-      monthly: "$200/month",
+      setup: "$1500",
+      monthly: "$150/month",
       popular: true,
       features: [
         "Premium custom design",

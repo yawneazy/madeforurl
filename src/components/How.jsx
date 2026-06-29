@@ -63,11 +63,11 @@ function How() {
     <div className="how-flow">
       {[
         { title: "Let's talk", desc: "A quick call to understand your business, goals, and what kind of site you actually need. We'll also go over any ideas you have for design or functionality." },
-        { title: "Design mockup", desc: "I'll design your site in Figma so you can see exactly how everything will look before any development starts." },
+        { title: "Design mockup", desc: "I'll design your site so you can see exactly how everything will look before any development starts." },
         { title: "Feedback & approval", desc: "You review the design and request changes. Once you're happy, we lock it in and move into development." },
         { title: "Build & development", desc: "The approved design becomes a real, responsive website — optimized for mobile, speed, and usability." },
         { title: "Launch", desc: "After final review, your site goes live. I handle the full setup so everything runs smoothly on your domain." },
-        { title: "Ongoing support", desc: "Need updates or changes? I'm available depending on your plan. You're not left on your own after launch." },
+        { title: "Ongoing support", desc: "Need updates or changes? You're not left on your own after launch." },
       ].map((step, i) => (
         <div className="how-step" key={i}>
           <div className="step-left">

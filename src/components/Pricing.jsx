@@ -71,68 +71,13 @@ function Pricing() {
       ],
     },
   ];
-    // const plans = [
-    //     {
-    //       name: "Starter",
-    //       icon: <FaSeedling/>,
-    //       setup: "$1,500",
-    //       monthly: "$50/month",
-    //       features: [
-    //         "1–3 pages",
-    //         "Portfolio / personal site",
-    //         "Contact form",
-    //         "1–2 edits/month",
-    //       ],
-    //     },
-    //     {
-    //       name: "Growth",
-    //       icon: <FaChartLine/>,
-    //       setup: "$2,500",
-    //       monthly: "$120/month",
-    //       features: [
-    //         "5–10 pages",
-    //         "Custom design",
-    //         "SEO basics",
-    //         "Integrations",
-    //         "5–8 edits/month",
-    //       ],
-    //     }, {
-    //       name: "Growth +",
-    //       icon: <FaRocket/>,
-    //       setup: "$750",
-    //       monthly: "$200/month",
-    //       features: [
-    //         "Full site build",
-    //         "Priority support",
-    //         "Ongoing improvements",
-    //         "Analytics help",
-    //         "Unlimited edits (fair use)",
-    //       ],
-    //     },
-    //     {
-    //       name: "Personal",
-    //       icon: <FaUser/>,
-    //       setup: "$500",
-    //       monthly: "$25/month",
-    //       features: [
-    //         "1–3 pages",
-    //         "clean custom design",
-    //         "portfolio/gallery",
-    //         "contact form", 
-    //         "1-2 small edits/month"
-    //       ],
-    //       who: "Perfect for individuals who need a simple, clean online presence. Ideal for portfolios, artists, and personal brands looking to showcase their work without the complexity of a full business website.",
-    //     },
-    //   ]
-
-      const [showComparison, setShowComparison] = useState(false);
 
     return (
       <section className="pricing" id="pricing">
   <h1 className="pricing-title">Pricing</h1>
-  {/* <p className="pricing-note">
+  <p className="pricing-note">
     🌱 Founding Client Pricing — special rates for the first 10 clients
-  </p> */}
+  </p>
 
   <div className="pricing-container">
     {plans.map((plan, index) => (
@@ -161,16 +106,16 @@ function Pricing() {
 </p> */}
   </div>
 
-  <div className="compare-wrapper">
+  {/* <div className="compare-wrapper">
   <button
     className="compare-plans-btn"
     onClick={() => setShowComparison(!showComparison)}
   >
     {showComparison ? "Hide Comparison ↑" : "Compare Plans ↓"}
   </button>
-</div>
+</div> */}
 
-{showComparison && (
+{/* {showComparison && (
   <div className="comparison-table-wrapper">
         <table className="pricing-comparison-table">
           <thead>
@@ -199,7 +144,7 @@ function Pricing() {
         </table>
         <p className="table-note">* Unlimited edits subject to fair use policy</p>
       </div>
-    )}
+    // )} */}
 </section>
 );
 }
